@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
-import { View, StyleSheet, TouchableHighlight, Image, Platform, TextInput } from 'react-native'
+
+import { View, StyleSheet, TouchableHighlight, Image, Platform, Switch, TextInput } from 'react-native'
 import Badge from '../badge/badge'
 import Icon from '../icons/Icon'
 import Text from '../text/Text'
@@ -38,6 +39,13 @@ const ListItem = ({
   badgeTextStyle,
   label,
   onLongPress,
+  switchButton,
+  onSwitch,
+  switchDisabled,
+  switchOnTintColor,
+  switchThumbTintColor,
+  switchTintColor,
+  switched,
   textInput,
   textInputAutoCapitalize,
   textInputAutoCorrect,
@@ -168,6 +176,19 @@ const ListItem = ({
           )
         }
         {
+          switchButton && hideChevron && (
+            <View style={styles.switchContainer}>
+              <Switch
+                onValueChange={onSwitch}
+                disabled={switchDisabled}
+                onTintColor={switchOnTintColor}
+                thumbTintColor={switchThumbTintColor}
+                tintColor={switchTintColor}
+                value={switched}/>
+            </View>
+          )
+        }
+        {
           badge && !rightTitle && (
             <Badge
               badge={badge}
@@ -187,6 +208,7 @@ ListItem.defaultProps = {
   rightIcon: {name: 'chevron-right'},
   hideChevron: false,
   roundAvatar: false,
+  switchButton: false,
   textInputEditable: true
 }
 
@@ -207,6 +229,13 @@ ListItem.propTypes = {
   chevronColor: PropTypes.string,
   roundAvatar: PropTypes.bool,
   badge: PropTypes.any,
+  switchButton: PropTypes.bool,
+  onSwitch: PropTypes.func,
+  switchDisabled: PropTypes.bool,
+  switchOnTintColor: PropTypes.string,
+  switchThumbTintColor: PropTypes.string,
+  switchTintColor: PropTypes.string,
+  switched: PropTypes.bool,
   textInput: PropTypes.bool,
   textInputAutoCapitalize: PropTypes.bool,
   textInputAutoCorrect: PropTypes.bool,
@@ -276,6 +305,12 @@ styles = StyleSheet.create({
     flex: 0.15,
     alignItems: 'flex-end',
     justifyContent: 'center'
+  },
+  switchContainer: {
+    flex: 0.15,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    marginRight: 5
   },
   rightTitleContainer: {
     flex: 1,
