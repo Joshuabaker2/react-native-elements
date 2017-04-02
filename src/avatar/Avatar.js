@@ -5,10 +5,8 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-
-import Icon from 'react-native-vector-icons/FontAwesome'
-
-import Text from '../text/Text'
+import Icon from '../icons/Icon';
+import Text from '../text/Text';
 
 const Avatar = (props) => {
   const {
@@ -95,8 +93,10 @@ const Avatar = (props) => {
         <Icon
           style={iconStyle && iconStyle}
           color={icon.color || 'white'}
-          name={icon.type || 'user'}
-          size={icon.size || iconSize} />
+          name={icon.name || 'user'}
+          size={icon.size || iconSize}
+          type={icon.type || 'font-awesome'}
+        />
       )
     }
   }
