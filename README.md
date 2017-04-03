@@ -72,7 +72,7 @@ ios/android directory and created it with `react-native init`), [follow these in
 - [ ] [Two-Marker Slider](https://github.com/react-native-community/react-native-elements/issues/15)
 - [ ] [Add Notification Component](https://github.com/react-native-community/react-native-elements/issues/190)
 - [ ] [Add Image Component which supports parallax](https://github.com/react-native-community/react-native-elements/issues/203)
-- [ ] [Add DatePicker/Calendar Component](https://github.com/react-native-community/react-native-elements/issues/214)
+- [ ] [AddS DatePicker/Calendar Component](https://github.com/react-native-community/react-native-elements/issues/214)
 - [ ] [Add Theming & Default Styles](https://github.com/react-native-community/react-native-elements/issues/216)
 - [ ] Something you's like to see? Submit an [issue](https://github.com/dabit3/react-native-elements/issues) or a [pull request](https://github.com/dabit3/react-native-elements/pulls)
 
